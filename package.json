@@ -1,0 +1,30 @@
+{
+  "name": "typo-fixer-extension",
+  "version": "1.0.0",
+  "description": "Smart Bilingual Typo & Layout Fixer Web Extension (Manifest V3)",
+  "author": "Adham <adhamelemrator3@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/domz-1/typo-fixer-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domz-1/typo-fixer-extension.git"
+  },
+  "keywords": [
+    "typo-fixer",
+    "chrome-extension",
+    "web-extension",
+    "manifest-v3",
+    "arabic",
+    "autocorrect",
+    "spell-check",
+    "keyboard-layout"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "format": "bun x prettier --write .",
+    "lint": "bun x prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.5.0"
+  }
+}

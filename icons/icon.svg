@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="wandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="128" height="128" rx="28" fill="url(#bgGrad)" stroke="#38bdf8" stroke-width="2.5" />
+  
+  <!-- Subtle letter T -->
+  <path d="M 28 36 L 56 36 M 42 36 L 42 86" stroke="#38bdf8" stroke-width="7" stroke-linecap="round" opacity="0.35" />
+  
+  <!-- Magic Wand -->
+  <line x1="32" y1="96" x2="76" y2="52" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
+  <line x1="72" y1="56" x2="88" y2="40" stroke="url(#sparkGrad)" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Big Sparkle Star -->
+  <path d="M 96 16 L 100 28 L 112 32 L 100 36 L 96 48 L 92 36 L 80 32 L 92 28 Z" fill="url(#sparkGrad)" />
+  <circle cx="96" cy="32" r="3" fill="#ffffff" />
+  
+  <!-- Small Sparkle Star -->
+  <path d="M 72 20 L 74 25 L 79 27 L 74 29 L 72 34 L 70 29 L 65 27 L 70 25 Z" fill="#38bdf8" opacity="0.8" />
+</svg>

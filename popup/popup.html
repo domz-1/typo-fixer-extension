@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TypoFixer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-group">
+          <div class="logo-icon">✨</div>
+          <div class="logo-text">
+            <h1>TypoFixer</h1>
+            <span class="badge-version">v1.0</span>
+          </div>
+        </div>
+        <div class="header-action">
+          <span class="status-indicator"></span>
+          <span class="status-text">Active</span>
+        </div>
+      </header>
+
+      <!-- Interactive Test Playground -->
+      <section class="card playground-card">
+        <div class="card-header">
+          <span class="card-title">🧪 Live Playground</span>
+          <span class="badge-shortcut">Alt + Q</span>
+        </div>
+        <textarea
+          id="test-input"
+          placeholder="Type here to test... e.g. 'sghl ugd;l' or 'teh wnat to amke pelase'"
+        ></textarea>
+        <div class="playground-actions">
+          <button id="btn-test-fix" class="btn-primary">✨ Fix Text</button>
+          <button id="btn-test-clear" class="btn-secondary">Clear</button>
+        </div>
+        <div id="test-result" class="test-result hidden">
+          <div class="result-header">
+            <span class="result-badge" id="result-badge">Fixed</span>
+            <span class="result-label" id="result-label">Result:</span>
+          </div>
+          <div class="result-content" id="result-content"></div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-fixes">0</div>
+          <div class="stat-label">Words Fixed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-layouts">0</div>
+          <div class="stat-label">Layouts Recovered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-time">0s</div>
+          <div class="stat-label">Time Saved</div>
+        </div>
+      </section>
+
+      <!-- Settings Toggles -->
+      <section class="card">
+        <div class="card-header">
+          <span class="card-title">⚙️ Preferences</span>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-name">🔀 Auto Layout Swap</span>
+            <span class="setting-desc">Arabic ⇄ English keyboard recovery</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-layout" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-name">🪄 Floating Magic Wand</span>
+            <span class="setting-desc"
+              >1-click fix button near text fields</span
+            >
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-wand" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-name">🔤 Capitalization & Punctuation</span>
+            <span class="setting-desc"
+              >Auto uppercase & question mark detection</span
+            >
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-format" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <span class="setting-name">🔔 HUD Notification Toast</span>
+            <span class="setting-desc">Show result with quick Undo button</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-toast" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Custom Snippets / Personal Dictionary -->
+      <section class="card">
+        <div class="card-header">
+          <span class="card-title">📝 Custom Snippets</span>
+        </div>
+        <div class="snippet-inputs">
+          <input
+            type="text"
+            id="snippet-key"
+            placeholder="Shortcut (e.g. ty)"
+          />
+          <input
+            type="text"
+            id="snippet-val"
+            placeholder="Expansion (e.g. Thank you)"
+          />
+          <button id="btn-add-snippet" class="btn-small">+</button>
+        </div>
+        <div class="snippet-list" id="snippet-list"></div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <span class="footer-tip"
+          >Press <strong>Alt + Q</strong> anywhere on the web!</span
+        >
+        <a
+          href="https://github.com/domz-1/typo-fixer-extension"
+          target="_blank"
+          class="footer-link"
+          >GitHub</a
+        >
+      </footer>
+    </div>
+
+    <script src="../core/engine.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
