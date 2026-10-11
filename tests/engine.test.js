@@ -20,6 +20,10 @@ describe("TypoFixer Engine Tests", () => {
     expect(res.fixed).toBe("Youtube");
     expect(res.layoutSwapped).toBe(true);
     expect(res.layoutDirection).toBe("ar-to-en");
+
+    const fullSentence = engine.fixText("ِةثثى 'خاشةثي ÷س فاث لاثسف غخعفعلاثق");
+    expect(fullSentence.fixed).toBe("Ameen Mohamed Is the best youtuber");
+    expect(fullSentence.layoutSwapped).toBe(true);
   });
 
   test("formats capitalization and question mark", () => {

@@ -21,12 +21,74 @@
     "use strict";
 
     const EN_TO_AR = {
-      q: "ض", w: "ص", e: "ث", r: "ق", t: "ف", y: "غ", u: "ع", i: "ه", o: "خ", p: "ح", "[": "ج", "]": "د",
-      a: "ش", s: "س", d: "ي", f: "ب", g: "ل", h: "ا", j: "ت", k: "ن", l: "م", ";": "ك", "'": "ط",
-      z: "ئ", x: "ء", c: "ؤ", v: "ر", b: "لا", n: "ى", m: "ة", ",": "و", ".": "ز", "/": "ظ", "`": "ذ",
-      "~": "ّ", Q: "َ", W: "ً", E: "ُ", R: "ٌ", T: "لإ", Y: "إ", U: "‘", I: "÷", O: "×", P: "؛",
-      "{": "<", "}": ">", A: "ِ", S: "ٍ", D: "]", F: "[", G: "لأ", H: "أ", J: "ـ", K: "،", L: "/",
-      ":": ":", "\"": "\"", Z: "~", X: "ْ", C: "}", V: "{", B: "لآ", N: "آ", M: "'", "<": ",", ">": ".", "?": "؟"
+      q: "ض",
+      w: "ص",
+      e: "ث",
+      r: "ق",
+      t: "ف",
+      y: "غ",
+      u: "ع",
+      i: "ه",
+      o: "خ",
+      p: "ح",
+      "[": "ج",
+      "]": "د",
+      a: "ش",
+      s: "س",
+      d: "ي",
+      f: "ب",
+      g: "ل",
+      h: "ا",
+      j: "ت",
+      k: "ن",
+      l: "م",
+      ";": "ك",
+      "'": "ط",
+      z: "ئ",
+      x: "ء",
+      c: "ؤ",
+      v: "ر",
+      b: "لا",
+      n: "ى",
+      m: "ة",
+      ",": "و",
+      ".": "ز",
+      "/": "ظ",
+      "`": "ذ",
+      "~": "ّ",
+      Q: "َ",
+      W: "ً",
+      E: "ُ",
+      R: "ٌ",
+      T: "لإ",
+      Y: "إ",
+      U: "‘",
+      I: "÷",
+      O: "×",
+      P: "؛",
+      "{": "<",
+      "}": ">",
+      A: "ِ",
+      S: "ٍ",
+      D: "]",
+      F: "[",
+      G: "لأ",
+      H: "أ",
+      J: "ـ",
+      K: "،",
+      L: "/",
+      ":": ":",
+      '"': '"',
+      Z: "~",
+      X: "ْ",
+      C: "}",
+      V: "{",
+      B: "لآ",
+      N: "آ",
+      M: "'",
+      "<": ",",
+      ">": ".",
+      "?": "؟",
     };
 
     const AR_TO_EN = {};
@@ -131,56 +193,282 @@
       ive: "I've",
       ill: "I'll",
 
-      "الان": "الآن",
-      "انشاءالله": "إن شاء الله",
-      "انشالله": "إن شاء الله",
+      الان: "الآن",
+      انشاءالله: "إن شاء الله",
+      انشالله: "إن شاء الله",
       "انشاء الله": "إن شاء الله",
-      "لاكن": "لكن",
-      "هاذا": "هذا",
-      "هاذه": "هذه",
-      "اللذي": "الذي",
-      "التي": "التي",
-      "شكراا": "شكراً",
-      "شكرا": "شكراً",
-      "جدا": "جداً",
-      "ايضا": "أيضاً",
-      "دائما": "دائماً",
-      "مبروك": "مبارك"
+      لاكن: "لكن",
+      هاذا: "هذا",
+      هاذه: "هذه",
+      اللذي: "الذي",
+      التي: "التي",
+      شكراا: "شكراً",
+      شكرا: "شكراً",
+      جدا: "جداً",
+      ايضا: "أيضاً",
+      دائما: "دائماً",
+      مبروك: "مبارك",
     };
 
     const COMMON_ARABIC_WORDS = new Set([
-      "سلام", "عليكم", "مرحبا", "اهلا", "أهلا", "الان", "الآن", "كيف", "حالك",
-      "شكرا", "شكراً", "نعم", "لا", "صباح", "مساء", "الخير", "النور", "الله",
-      "إن", "شاء", "في", "من", "على", "عن", "مع", "الى", "إلى", "هذا", "هذه",
-      "ذلك", "تلك", "هو", "هي", "هم", "نحن", "أنا", "انا", "انت", "أنت", "انتم",
-      "أنتم", "كان", "يكون", "تكون", "تم", "تطبيق", "نظام", "برنامج", "ملف",
-      "كتابة", "عايز", "محتاج", "ممكن", "فين", "ليه", "ازاي", "إزاي", "شغال",
-      "مش", "كله", "تمام", "يا", "اخي", "أخي", "جميل", "حلو", "كويس", "شكر",
-      "معك", "معي", "عندي", "عندك", "فيه", "فيها", "منك", "مني", "جوجل",
-      "يوتيوب", "فيسبوك", "تويتر", "واتساب", "انستغرام", "موقع", "صفحة",
-      "رابط", "كود", "مشروع", "تطوير", "بيانات", "تصميم"
+      "سلام",
+      "عليكم",
+      "مرحبا",
+      "اهلا",
+      "أهلا",
+      "الان",
+      "الآن",
+      "كيف",
+      "حالك",
+      "شكرا",
+      "شكراً",
+      "نعم",
+      "لا",
+      "صباح",
+      "مساء",
+      "الخير",
+      "النور",
+      "الله",
+      "إن",
+      "شاء",
+      "في",
+      "من",
+      "على",
+      "عن",
+      "مع",
+      "الى",
+      "إلى",
+      "هذا",
+      "هذه",
+      "ذلك",
+      "تلك",
+      "هو",
+      "هي",
+      "هم",
+      "نحن",
+      "أنا",
+      "انا",
+      "انت",
+      "أنت",
+      "انتم",
+      "أنتم",
+      "كان",
+      "يكون",
+      "تكون",
+      "تم",
+      "تطبيق",
+      "نظام",
+      "برنامج",
+      "ملف",
+      "كتابة",
+      "عايز",
+      "محتاج",
+      "ممكن",
+      "فين",
+      "ليه",
+      "ازاي",
+      "إزاي",
+      "شغال",
+      "مش",
+      "كله",
+      "تمام",
+      "يا",
+      "اخي",
+      "أخي",
+      "جميل",
+      "حلو",
+      "كويس",
+      "شكر",
+      "معك",
+      "معي",
+      "عندي",
+      "عندك",
+      "فيه",
+      "فيها",
+      "منك",
+      "مني",
+      "جوجل",
+      "يوتيوب",
+      "فيسبوك",
+      "تويتر",
+      "واتساب",
+      "انستغرام",
+      "موقع",
+      "صفحة",
+      "رابط",
+      "كود",
+      "مشروع",
+      "تطوير",
+      "بيانات",
+      "تصميم",
     ]);
 
     const COMMON_ENGLISH_WORDS = new Set([
-      "the", "be", "to", "of", "and", "a", "in", "that", "have", "i", "it",
-      "for", "not", "on", "with", "he", "as", "you", "do", "at", "this",
-      "but", "his", "by", "from", "they", "we", "say", "her", "she", "or",
-      "an", "will", "my", "one", "all", "would", "there", "their", "what",
-      "so", "up", "out", "if", "about", "who", "get", "which", "go", "me",
-      "when", "make", "can", "like", "time", "no", "just", "him", "know",
-      "take", "people", "into", "year", "your", "good", "some", "could",
-      "them", "see", "other", "than", "then", "now", "look", "only", "come",
-      "its", "over", "think", "also", "back", "after", "use", "two", "how",
-      "our", "work", "first", "well", "way", "even", "new", "want", "because",
-      "any", "these", "give", "day", "most", "us", "is", "are", "was", "were",
-      "been", "has", "had", "google", "youtube", "github", "git", "docker",
-      "node", "python", "react", "next", "vue", "code", "project", "test",
-      "build", "run", "dev", "terminal", "extension", "file", "folder",
-      "install", "setup", "server", "port", "host", "api", "url", "link",
-      "data", "database", "user", "admin", "password", "email", "name",
-      "search", "page", "website", "app", "error", "fix", "update", "remove",
-      "delete", "create", "add", "edit", "view", "click", "press", "shortcut",
-      "key", "value", "type", "number", "string", "function", "class"
+      "the",
+      "be",
+      "to",
+      "of",
+      "and",
+      "a",
+      "in",
+      "that",
+      "have",
+      "i",
+      "it",
+      "for",
+      "not",
+      "on",
+      "with",
+      "he",
+      "as",
+      "you",
+      "do",
+      "at",
+      "this",
+      "but",
+      "his",
+      "by",
+      "from",
+      "they",
+      "we",
+      "say",
+      "her",
+      "she",
+      "or",
+      "an",
+      "will",
+      "my",
+      "one",
+      "all",
+      "would",
+      "there",
+      "their",
+      "what",
+      "so",
+      "up",
+      "out",
+      "if",
+      "about",
+      "who",
+      "get",
+      "which",
+      "go",
+      "me",
+      "when",
+      "make",
+      "can",
+      "like",
+      "time",
+      "no",
+      "just",
+      "him",
+      "know",
+      "take",
+      "people",
+      "into",
+      "year",
+      "your",
+      "good",
+      "some",
+      "could",
+      "them",
+      "see",
+      "other",
+      "than",
+      "then",
+      "now",
+      "look",
+      "only",
+      "come",
+      "its",
+      "over",
+      "think",
+      "also",
+      "back",
+      "after",
+      "use",
+      "two",
+      "how",
+      "our",
+      "work",
+      "first",
+      "well",
+      "way",
+      "even",
+      "new",
+      "want",
+      "because",
+      "any",
+      "these",
+      "give",
+      "day",
+      "most",
+      "us",
+      "is",
+      "are",
+      "was",
+      "were",
+      "been",
+      "has",
+      "had",
+      "google",
+      "youtube",
+      "github",
+      "git",
+      "docker",
+      "node",
+      "python",
+      "react",
+      "next",
+      "vue",
+      "code",
+      "project",
+      "test",
+      "build",
+      "run",
+      "dev",
+      "terminal",
+      "extension",
+      "file",
+      "folder",
+      "install",
+      "setup",
+      "server",
+      "port",
+      "host",
+      "api",
+      "url",
+      "link",
+      "data",
+      "database",
+      "user",
+      "admin",
+      "password",
+      "email",
+      "name",
+      "search",
+      "page",
+      "website",
+      "app",
+      "error",
+      "fix",
+      "update",
+      "remove",
+      "delete",
+      "create",
+      "add",
+      "edit",
+      "view",
+      "click",
+      "press",
+      "shortcut",
+      "key",
+      "value",
+      "type",
+      "number",
+      "string",
+      "function",
+      "class",
     ]);
 
     function enToAr(text) {
@@ -207,7 +495,8 @@
     }
 
     function detectAccidentalLayout(text) {
-      if (!text || !text.trim()) return { text: "", swapped: false, direction: "none" };
+      if (!text || !text.trim())
+        return { text: "", swapped: false, direction: "none" };
 
       const hasAr = /[\u0600-\u06FF]/.test(text);
       const hasEn = /[a-zA-Z]/.test(text);
@@ -217,7 +506,9 @@
           .split(/\s+/)
           .map((w) => w.replace(/[^\u0600-\u06FF]/g, ""))
           .filter(Boolean);
-        const validArCount = arWords.filter((w) => COMMON_ARABIC_WORDS.has(w)).length;
+        const validArCount = arWords.filter((w) =>
+          COMMON_ARABIC_WORDS.has(w),
+        ).length;
 
         const converted = arToEn(text);
         const enWords = converted
@@ -226,7 +517,7 @@
           .map((w) => w.replace(/[^a-z]/g, ""))
           .filter(Boolean);
         const validEnCount = enWords.filter(
-          (w) => COMMON_ENGLISH_WORDS.has(w) || COMMON_TYPOS[w]
+          (w) => COMMON_ENGLISH_WORDS.has(w) || COMMON_TYPOS[w],
         ).length;
 
         if (
@@ -244,7 +535,9 @@
           .split(/\s+/)
           .map((w) => w.replace(/[^\u0600-\u06FF]/g, ""))
           .filter(Boolean);
-        const validArCount = arWords.filter((w) => COMMON_ARABIC_WORDS.has(w)).length;
+        const validArCount = arWords.filter((w) =>
+          COMMON_ARABIC_WORDS.has(w),
+        ).length;
 
         const enWords = text
           .toLowerCase()
@@ -252,10 +545,14 @@
           .map((w) => w.replace(/[^a-z]/g, ""))
           .filter(Boolean);
         const validEnCount = enWords.filter(
-          (w) => COMMON_ENGLISH_WORDS.has(w) || COMMON_TYPOS[w] || w.length <= 2
+          (w) =>
+            COMMON_ENGLISH_WORDS.has(w) || COMMON_TYPOS[w] || w.length <= 2,
         ).length;
 
-        if (validArCount > 0 && (validArCount >= arWords.length * 0.35 || validArCount > validEnCount)) {
+        if (
+          validArCount > 0 &&
+          (validArCount >= arWords.length * 0.35 || validArCount > validEnCount)
+        ) {
           return { text: converted, swapped: true, direction: "en-to-ar" };
         }
 
@@ -270,7 +567,9 @@
     }
 
     function correctWord(w, customMap = {}) {
-      const matchPunct = w.match(/^([^a-zA-Z0-9\u0600-\u06FF]*)(.*?)([^a-zA-Z0-9\u0600-\u06FF]*)$/);
+      const matchPunct = w.match(
+        /^([^a-zA-Z0-9\u0600-\u06FF]*)(.*?)([^a-zA-Z0-9\u0600-\u06FF]*)$/,
+      );
       if (!matchPunct) return w;
 
       const prefix = matchPunct[1];
@@ -307,10 +606,27 @@
       }
 
       const questionWords = [
-        "what", "who", "where", "when", "why", "how", "is", "are",
-        "can", "could", "would", "do", "does", "did", "should", "will"
+        "what",
+        "who",
+        "where",
+        "when",
+        "why",
+        "how",
+        "is",
+        "are",
+        "can",
+        "could",
+        "would",
+        "do",
+        "does",
+        "did",
+        "should",
+        "will",
       ];
-      const firstWord = t.split(/\s+/)[0].toLowerCase().replace(/[^a-z]/g, "");
+      const firstWord = t
+        .split(/\s+/)[0]
+        .toLowerCase()
+        .replace(/[^a-z]/g, "");
       if (questionWords.includes(firstWord) && !/[?.!]$/.test(t)) {
         t += "?";
       }
@@ -319,7 +635,8 @@
     }
 
     function fixText(inputText, options = {}) {
-      if (!inputText || !inputText.trim()) return { original: inputText, fixed: inputText, isChanged: false };
+      if (!inputText || !inputText.trim())
+        return { original: inputText, fixed: inputText, isChanged: false };
 
       let text = inputText;
       let layoutSwapped = false;
@@ -336,10 +653,12 @@
 
       const customMap = options.customSnippets || {};
       const words = text.split(/(\s+)/);
-      text = words.map((chunk) => {
-        if (/\s+/.test(chunk)) return chunk;
-        return correctWord(chunk, customMap);
-      }).join("");
+      text = words
+        .map((chunk) => {
+          if (/\s+/.test(chunk)) return chunk;
+          return correctWord(chunk, customMap);
+        })
+        .join("");
 
       if (options.autoFormat !== false) {
         text = formatPunctuationAndCaps(text);
@@ -350,7 +669,7 @@
         fixed: text,
         isChanged: text !== inputText,
         layoutSwapped,
-        layoutDirection
+        layoutDirection,
       };
     }
 
@@ -365,7 +684,7 @@
       detectAccidentalLayout,
       correctWord,
       formatPunctuationAndCaps,
-      fixText
+      fixText,
     };
-  }
+  },
 );
